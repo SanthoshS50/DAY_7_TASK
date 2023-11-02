@@ -30,22 +30,22 @@ Request.onload = function(){
 // b. Get all the countries with a population of less than 2 lakhs using Filter function : 
 
 //Step 1 : Create a XHR Object
-var Request = new XMLHttpRequest();
+var Request1 = new XMLHttpRequest();
 
 //Step 2 : Opening a Connection to the Server
-Request.open("GET","https://restcountries.com/v3.1/all",true)
+Request1.open("GET","https://restcountries.com/v3.1/all",true)
 
 //Step 3 : Initiating a bridge to the Server / Sending a Request
-Request.send();
+Request1.send();
 
 //Step 4 : Server Response
-Request.onload = function(){
-    var data = Request.response;
-    //console.log(data);
-    var Result = JSON.parse(data);
-    //console.log(Result);
+Request1.onload = function(){
+    var data1 = Request1.response;
+    //console.log(data1);
+    var Result1 = JSON.parse(data1);
+    //console.log(Result1);
 
-    var population_Res = Result.filter((x)=>x.population<200000);
+    var population_Res = Result1.filter((x)=>x.population<200000);
     population_Res.map((ele)=>console.log(ele.name.common));
 }
 
@@ -54,22 +54,22 @@ Request.onload = function(){
 // c. Print the following details name, capital, flag, using forEach function :
 
 //Step 1 : Create a XHR Object
-var Request = new XMLHttpRequest();
+var Request2 = new XMLHttpRequest();
 
 //Step 2 : Opening a Connection to the Server
-Request.open("GET","https://restcountries.com/v3.1/all",true)
+Request2.open("GET","https://restcountries.com/v3.1/all",true)
 
 //Step 3 : Initiating a bridge to the Server / Sending a Request
-Request.send();
+Request2.send();
 
 //Step 4 : Server Response
-Request.onload = function(){
-    var data = Request.response;
-    //console.log(data);
-    var Result = JSON.parse(data);
-    //console.log(Result);
+Request2.onload = function(){
+    var data2 = Request2.response;
+    //console.log(data2);
+    var Result2 = JSON.parse(data2);
+    //console.log(Result2);
 
-    var Details = Result.forEach((element) =>console.log(`Name : ${element.name.common}, Capital : ${element.capital}, Flag : ${element.flag}`));
+    var Details = Result2.forEach((element) =>console.log(`Name : ${element.name.common}, Capital : ${element.capital}, Flag : ${element.flag}`));
 }
 
 /*-----------------------------------------------------------------------------*/
@@ -77,22 +77,22 @@ Request.onload = function(){
 // d. Print the total population of countries using reduce function :
 
 //Step 1 : Create a XHR Object
-var Request = new XMLHttpRequest();
+var Request3 = new XMLHttpRequest();
 
 //Step 2 : Opening a Connection to the Server
-Request.open("GET","https://restcountries.com/v3.1/all",true)
+Request3.open("GET","https://restcountries.com/v3.1/all",true)
 
 //Step 3 : Initiating a bridge to the Server / Sending a Request
-Request.send();
+Request3.send();
 
 //Step 4 : Server Response
-Request.onload = function(){
-    var data = Request.response;
-    //console.log(data);
-    var Result = JSON.parse(data);
-    //console.log(Result);
+Request3.onload = function(){
+    var data3 = Request3.response;
+    //console.log(data3);
+    var Result3 = JSON.parse(data3);
+    //console.log(Result3);
 
-    var TotalPopulation = Result.reduce((acc,cv)=>{
+    var TotalPopulation = Result3.reduce((acc,cv)=>{
         return acc+cv.population
     },0)
     console.log(TotalPopulation);
@@ -104,22 +104,22 @@ Request.onload = function(){
 // e. Print the country that uses US dollars as currency.
 
 //Step 1 : Create a XHR Object
-var Request = new XMLHttpRequest();
+var Request4 = new XMLHttpRequest();
 
 //Step 2 : Opening a Connection to the Server
-Request.open("GET","https://restcountries.com/v3.1/all",true)
+Request4.open("GET","https://restcountries.com/v3.1/all",true)
 
 //Step 3 : Initiating a bridge to the Server / Sending a Request
-Request.send();
+Request4.send();
 
 //Step 4 : Server Response
-Request.onload = function(){
-    var data = Request.response;
-    //console.log(data);
-    var Result = JSON.parse(data);
-    //console.log(Result);
+Request4.onload = function(){
+    var data4 = Request.response;
+    //console.log(data4);
+    var Result4 = JSON.parse(data4);
+    //console.log(Result4);
 
-    const countriesWithUSD = Result.filter(country =>
+    const countriesWithUSD = Result4.filter(country =>
         country.currencies && country.currencies.USD
       ).map(country => country.name.common);
     
