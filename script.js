@@ -114,7 +114,7 @@ Request4.send();
 
 //Step 4 : Server Response
 Request4.onload = function(){
-    var data4 = Request.response;
+    var data4 = Request4.response;
     //console.log(data4);
     var Result4 = JSON.parse(data4);
     //console.log(Result4);
